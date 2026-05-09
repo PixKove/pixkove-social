@@ -1,17 +1,142 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>PixKove — Premium Wallpapers</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PixKove — Social Media Automation</title>
   <style>
-    body { font-family: sans-serif; background: #0a0a1a; color: #fff; text-align: center; padding: 60px; }
-    h1 { color: #a078ff; font-size: 3em; }
-    p { color: #aaa; font-size: 1.2em; }
-    a { color: #a078ff; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+           background: #0a0a0f; color: #fff; }
+    nav { display: flex; justify-content: space-between; align-items: center;
+          padding: 20px 48px; border-bottom: 1px solid #1e1e2e; }
+    .logo { font-size: 1.1rem; font-weight: 700; letter-spacing: -0.5px; }
+    .logo span { color: #7c6af7; }
+    nav a { color: #888; text-decoration: none; margin-left: 28px;
+            font-size: 0.88rem; transition: color 0.2s; }
+    nav a:hover { color: #fff; }
+    .hero { text-align: center; padding: 110px 40px 70px; }
+    .badge { display: inline-flex; align-items: center; gap: 8px;
+             background: #111827; border: 1px solid #2a2a3e;
+             padding: 6px 18px; border-radius: 999px;
+             font-size: 0.78rem; color: #7c6af7; margin-bottom: 28px; }
+    h1 { font-size: 3.2rem; line-height: 1.15; font-weight: 800;
+         letter-spacing: -1px; margin-bottom: 22px; }
+    h1 em { color: #7c6af7; font-style: normal; }
+    .sub { color: #888; font-size: 1.05rem; max-width: 520px;
+           margin: 0 auto 44px; line-height: 1.7; }
+    .cta { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .cta a { padding: 13px 30px; border-radius: 10px; font-size: 0.93rem;
+             text-decoration: none; font-weight: 500; }
+    .btn-p { background: #7c6af7; color: #fff; }
+    .btn-s { border: 1px solid #2a2a3e; color: #aaa; }
+    .btn-s:hover { border-color: #7c6af7; color: #fff; }
+    .features { max-width: 1080px; margin: 0 auto; padding: 70px 40px;
+                display: grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+                gap: 18px; }
+    .card { background: #0f0f1a; border: 1px solid #1e1e2e;
+            border-radius: 14px; padding: 30px; transition: border-color 0.2s; }
+    .card:hover { border-color: #7c6af7; }
+    .icon { font-size: 1.5rem; margin-bottom: 14px; }
+    .card h3 { font-size: 0.98rem; margin-bottom: 10px; }
+    .card p { color: #777; font-size: 0.88rem; line-height: 1.65; }
+    .platforms { text-align: center; padding: 20px 40px 80px; }
+    .platforms h2 { font-size: 1.1rem; color: #555; margin-bottom: 20px;
+                    font-weight: 400; }
+    .platform-list { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .platform-list span { background: #0f0f1a; border: 1px solid #1e1e2e;
+                          padding: 8px 18px; border-radius: 8px;
+                          font-size: 0.85rem; color: #888; }
+    footer { border-top: 1px solid #1e1e2e; padding: 40px;
+             text-align: center; color: #444; font-size: 0.84rem; }
+    footer a { color: #7c6af7; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
-  <h1>PixKove</h1>
-  <p>Walls that speak the night ✦ Premium wallpapers for every screen</p>
-  <p><a href="/privacy.html">Privacy Policy</a></p>
+
+<nav>
+  <div class="logo">● Pix<span>Kove</span></div>
+  <div>
+    <a href="#features">Features</a>
+    <a href="#platforms">Platforms</a>
+    <a href="privacy-policy.html">Privacy Policy</a>
+    <a href="terms.html">Terms of Service</a>
+    <a href="mailto:nyxwallhq@gmail.com">Contact</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="badge">⚡ SOCIAL MEDIA AUTOMATION</div>
+  <h1>Automate your social media<br>presence <em>intelligently</em></h1>
+  <p class="sub">PixKove is a personal automation system for scheduling,
+     publishing, and analyzing content across major social media platforms —
+     powered by n8n and official platform APIs.</p>
+  <div class="cta">
+    <a href="#features" class="cta btn-p">See how it works</a>
+    <a href="privacy-policy.html" class="cta btn-s">Privacy policy →</a>
+  </div>
+</section>
+
+<section class="features" id="features">
+  <div class="card">
+    <div class="icon">📅</div>
+    <h3>Automated Scheduling</h3>
+    <p>Schedule and publish content automatically on a defined calendar via n8n
+       workflow automation. No manual posting required.</p>
+  </div>
+  <div class="card">
+    <div class="icon">📊</div>
+    <h3>Performance Analytics</h3>
+    <p>Retrieve post metrics through official platform APIs — impressions, likes,
+       reach — to understand what content performs best.</p>
+  </div>
+  <div class="card">
+    <div class="icon">🔐</div>
+    <h3>Secure OAuth 2.0</h3>
+    <p>All platform access is handled through official OAuth 2.0 authorization
+       flows. No passwords are ever stored or shared.</p>
+  </div>
+  <div class="card">
+    <div class="icon">☁️</div>
+    <h3>Cloud-Based Media</h3>
+    <p>Images and videos are sourced from Google Cloud Storage and published
+       automatically according to a content schedule.</p>
+  </div>
+  <div class="card">
+    <div class="icon">👤</div>
+    <h3>Personal Use Only</h3>
+    <p>Developed exclusively for personal brand account management. No user data
+       is collected, stored, or shared with any third party.</p>
+  </div>
+  <div class="card">
+    <div class="icon">🔄</div>
+    <h3>n8n Workflow Engine</h3>
+    <p>Built on n8n, a self-hosted automation platform. All logic runs privately
+       without exposing credentials or content externally.</p>
+  </div>
+</section>
+
+<section class="platforms" id="platforms">
+  <h2>Designed to work with</h2>
+  <div class="platform-list">
+    <span>𝕏 X (Twitter)</span>
+    <span>📸 Instagram</span>
+    <span>💼 LinkedIn</span>
+    <span>📌 Pinterest</span>
+    <span>▶️ YouTube</span>
+  </div>
+</section>
+
+<footer>
+  <p>PixKove — Personal social media automation tool.</p>
+  <p style="margin-top:10px">
+    <a href="privacy-policy.html">Privacy Policy</a> &nbsp;·&nbsp;
+    <a href="terms.html">Terms of Service</a> &nbsp;·&nbsp;
+    <a href="mailto:nyxwallhq@gmail.com">nyxwallhq@gmail.com</a>
+  </p>
+  <p style="margin-top:10px">© 2026 PixKove. All rights reserved.</p>
+</footer>
+
 </body>
 </html>
