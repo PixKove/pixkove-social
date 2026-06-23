@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PixKove — Social Media Automation</title>
+  <title>Personal Social Media Automation</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -15,6 +15,8 @@
     nav a { color: #888; text-decoration: none; margin-left: 28px;
             font-size: 0.88rem; transition: color 0.2s; }
     nav a:hover { color: #fff; }
+
+    /* HERO */
     .hero { text-align: center; padding: 110px 40px 70px; }
     .badge { display: inline-flex; align-items: center; gap: 8px;
              background: #111827; border: 1px solid #2a2a3e;
@@ -23,7 +25,7 @@
     h1 { font-size: 3.2rem; line-height: 1.15; font-weight: 800;
          letter-spacing: -1px; margin-bottom: 22px; }
     h1 em { color: #7c6af7; font-style: normal; }
-    .sub { color: #888; font-size: 1.05rem; max-width: 520px;
+    .sub { color: #888; font-size: 1.05rem; max-width: 560px;
            margin: 0 auto 44px; line-height: 1.7; }
     .cta { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
     .cta a { padding: 13px 30px; border-radius: 10px; font-size: 0.93rem;
@@ -31,15 +33,60 @@
     .btn-p { background: #7c6af7; color: #fff; }
     .btn-s { border: 1px solid #2a2a3e; color: #aaa; }
     .btn-s:hover { border-color: #7c6af7; color: #fff; }
+
+    /* HOW IT WORKS — pipeline steps */
+    .pipeline { max-width: 860px; margin: 0 auto; padding: 80px 40px 20px; }
+    .pipeline-label { text-align: center; font-size: 0.78rem; color: #7c6af7;
+                      letter-spacing: 0.1em; text-transform: uppercase;
+                      margin-bottom: 14px; }
+    .pipeline h2 { text-align: center; font-size: 1.7rem; font-weight: 700;
+                   margin-bottom: 48px; letter-spacing: -0.5px; }
+    .steps { display: flex; flex-direction: column; gap: 0; }
+    .step { display: grid; grid-template-columns: 56px 1fr;
+            gap: 0 24px; position: relative; padding-bottom: 36px; }
+    .step:last-child { padding-bottom: 0; }
+    .step-left { display: flex; flex-direction: column; align-items: center; }
+    .step-num { width: 40px; height: 40px; border-radius: 50%;
+                background: #111827; border: 1px solid #7c6af7;
+                display: flex; align-items: center; justify-content: center;
+                font-size: 0.82rem; font-weight: 700; color: #7c6af7;
+                flex-shrink: 0; }
+    .step-line { flex: 1; width: 1px; background: #1e1e2e; margin: 8px 0 0; }
+    .step:last-child .step-line { display: none; }
+    .step-body { padding-top: 8px; }
+    .step-body h3 { font-size: 0.97rem; font-weight: 600; margin-bottom: 6px; }
+    .step-body p { color: #777; font-size: 0.87rem; line-height: 1.65; }
+
+    /* FEATURE CARDS */
     .features { max-width: 1080px; margin: 0 auto; padding: 70px 40px;
                 display: grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
                 gap: 18px; }
+    .section-intro { text-align: center; padding: 0 40px 10px;
+                     max-width: 600px; margin: 0 auto; }
+    .section-intro .section-label { font-size: 0.78rem; color: #7c6af7;
+                                     letter-spacing: 0.1em; text-transform: uppercase;
+                                     margin-bottom: 10px; }
+    .section-intro h2 { font-size: 1.7rem; font-weight: 700; margin-bottom: 14px;
+                        letter-spacing: -0.5px; }
+    .section-intro p { color: #777; font-size: 0.9rem; line-height: 1.7; }
     .card { background: #0f0f1a; border: 1px solid #1e1e2e;
             border-radius: 14px; padding: 30px; transition: border-color 0.2s; }
     .card:hover { border-color: #7c6af7; }
     .icon { font-size: 1.5rem; margin-bottom: 14px; }
     .card h3 { font-size: 0.98rem; margin-bottom: 10px; }
     .card p { color: #777; font-size: 0.88rem; line-height: 1.65; }
+
+    /* BRANDS */
+    .brands { text-align: center; padding: 20px 40px 60px; }
+    .brands h2 { font-size: 0.78rem; color: #555; margin-bottom: 20px;
+                 font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; }
+    .brand-list { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .brand-pill { background: #0f0f1a; border: 1px solid #1e1e2e;
+                  padding: 10px 22px; border-radius: 10px;
+                  font-size: 0.88rem; color: #aaa; }
+    .brand-pill strong { color: #fff; }
+
+    /* PLATFORMS */
     .platforms { text-align: center; padding: 20px 40px 80px; }
     .platforms h2 { font-size: 1.1rem; color: #555; margin-bottom: 20px;
                     font-weight: 400; }
@@ -47,95 +94,236 @@
     .platform-list span { background: #0f0f1a; border: 1px solid #1e1e2e;
                           padding: 8px 18px; border-radius: 8px;
                           font-size: 0.85rem; color: #888; }
+
+    /* DIVIDER */
+    .divider { border: none; border-top: 1px solid #1e1e2e;
+               max-width: 1080px; margin: 0 auto; }
+
     footer { border-top: 1px solid #1e1e2e; padding: 40px;
              text-align: center; color: #444; font-size: 0.84rem; }
     footer a { color: #7c6af7; text-decoration: none; }
     footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 600px) {
+      nav { padding: 16px 20px; flex-direction: column; gap: 12px; }
+      h1 { font-size: 2.1rem; }
+      .pipeline, .features { padding-left: 20px; padding-right: 20px; }
+    }
   </style>
 </head>
 <body>
 
+<!-- NAV -->
 <nav>
-  <div class="logo">● Pix<span>Kove</span></div>
+  <div class="logo">● Personal <span>Automation</span></div>
   <div>
+    <a href="#how-it-works">How it works</a>
     <a href="#features">Features</a>
     <a href="#platforms">Platforms</a>
     <a href="privacy-policy.html">Privacy Policy</a>
-    <a href="terms.html">Terms of Service</a>
+    <a href="terms.html">Terms</a>
     <a href="mailto:nyxwallhq@gmail.com">Contact</a>
   </div>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
-  <div class="badge">⚡ SOCIAL MEDIA AUTOMATION</div>
-  <h1>Automate your social media<br>presence <em>intelligently</em></h1>
-  <p class="sub">PixKove is a personal automation system for scheduling,
-     publishing, and analyzing content across major social media platforms —
-     powered by n8n and official platform APIs.</p>
+  <div class="badge">⚡ AI-POWERED SOCIAL MEDIA AUTOMATION</div>
+  <h1>Publish. Analyze. Adapt.<br><em>Automatically.</em></h1>
+  <p class="sub">A personal AI media agent that manages media files, generates
+     social content, tracks performance, and continuously optimizes posting
+     strategy — all through n8n and official platform APIs.</p>
   <div class="cta">
-    <a href="#features" class="cta btn-p">See how it works</a>
+    <a href="#how-it-works" class="cta btn-p">See how it works</a>
     <a href="privacy-policy.html" class="cta btn-s">Privacy policy →</a>
   </div>
 </section>
 
-<section class="features" id="features">
-  <div class="card">
-    <div class="icon">📅</div>
-    <h3>Automated Scheduling</h3>
-    <p>Schedule and publish content automatically on a defined calendar via n8n
-       workflow automation. No manual posting required.</p>
-  </div>
-  <div class="card">
-    <div class="icon">📊</div>
-    <h3>Performance Analytics</h3>
-    <p>Retrieve post metrics through official platform APIs — impressions, likes,
-       reach — to understand what content performs best.</p>
-  </div>
-  <div class="card">
-    <div class="icon">🔐</div>
-    <h3>Secure OAuth 2.0</h3>
-    <p>All platform access is handled through official OAuth 2.0 authorization
-       flows. No passwords are ever stored or shared.</p>
-  </div>
-  <div class="card">
-    <div class="icon">☁️</div>
-    <h3>Cloud-Based Media</h3>
-    <p>Images and videos are sourced from Google Cloud Storage and published
-       automatically according to a content schedule.</p>
-  </div>
-  <div class="card">
-    <div class="icon">👤</div>
-    <h3>Personal Use Only</h3>
-    <p>Developed exclusively for personal brand account management. No user data
-       is collected, stored, or shared with any third party.</p>
-  </div>
-  <div class="card">
-    <div class="icon">🔄</div>
-    <h3>n8n Workflow Engine</h3>
-    <p>Built on n8n, a self-hosted automation platform. All logic runs privately
-       without exposing credentials or content externally.</p>
+<!-- HOW IT WORKS -->
+<section class="pipeline" id="how-it-works">
+  <div class="pipeline-label">How it works</div>
+  <h2>Five-stage automated pipeline</h2>
+  <div class="steps">
+
+    <div class="step">
+      <div class="step-left">
+        <div class="step-num">01</div>
+        <div class="step-line"></div>
+      </div>
+      <div class="step-body">
+        <h3>Media Library Access</h3>
+        <p>The agent connects to a designated Google Drive folder and retrieves
+           media files — images and videos — ready for publishing. Files are
+           sourced, downloaded, and converted for each platform's requirements
+           automatically. No manual file handling required.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-left">
+        <div class="step-num">02</div>
+        <div class="step-line"></div>
+      </div>
+      <div class="step-body">
+        <h3>AI Content Generation</h3>
+        <p>Claude Vision analyzes each media file and generates platform-optimized
+           captions, hashtags, comments, and reply templates. Content is tailored
+           per platform — cinematic long-form for Pinterest, punchy hooks for
+           Instagram Reels, concise text for X — using a structured prompt system
+           refined over time.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-left">
+        <div class="step-num">03</div>
+        <div class="step-line"></div>
+      </div>
+      <div class="step-body">
+        <h3>Scheduled Publishing</h3>
+        <p>Posts are published automatically via official platform APIs at
+           scheduled times. The schedule is not fixed — it is driven by
+           performance data, adjusted dynamically to favour the windows that
+           historically deliver the highest engagement for each platform
+           and content type.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-left">
+        <div class="step-num">04</div>
+        <div class="step-line"></div>
+      </div>
+      <div class="step-body">
+        <h3>Performance Analytics Collection</h3>
+        <p>After publishing, the agent polls each platform's analytics API to
+           collect impressions, reach, likes, saves, comments, and shares for
+           every post. All metrics are logged to a structured Google Sheets
+           analytics hub and stored for trend analysis.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-left">
+        <div class="step-num">05</div>
+        <div class="step-line"></div>
+      </div>
+      <div class="step-body">
+        <h3>Adaptive Strategy Optimization</h3>
+        <p>Performance data feeds back into the pipeline. The agent identifies
+           top-performing content formats, posting times, caption styles, and
+           hashtag sets. Future scheduling and content generation are adjusted
+           accordingly — creating a continuously improving loop without
+           manual intervention.</p>
+      </div>
+    </div>
+
   </div>
 </section>
 
+<hr class="divider" style="margin: 40px auto;">
+
+<!-- FEATURES -->
+<div class="section-intro" style="padding-top: 60px;" id="features">
+  <div class="section-label">Capabilities</div>
+  <h2>Built for autonomous operation</h2>
+  <p>Every component of the pipeline is designed to run without manual input,
+     from media retrieval through to strategy refinement.</p>
+</div>
+
+<section class="features">
+  <div class="card">
+    <div class="icon">☁️</div>
+    <h3>Google Drive Media Management</h3>
+    <p>Connects directly to a designated Google Drive folder. Retrieves, converts,
+       and routes media files to the correct publishing pipeline per platform —
+       images to Pinterest and Instagram, videos to Reels and TikTok.</p>
+  </div>
+  <div class="card">
+    <div class="icon">🤖</div>
+    <h3>AI Caption & Content Creation</h3>
+    <p>Uses Claude Vision to analyze images and generate captions, hashtags,
+       alt text, and comment replies. Each output is formatted to match
+       platform-specific style guides and adjusted based on what has
+       performed well historically.</p>
+  </div>
+  <div class="card">
+    <div class="icon">📊</div>
+    <h3>Post Performance Tracking</h3>
+    <p>Retrieves engagement metrics from each platform's official API after
+       every post. Impressions, reach, saves, likes, and shares are logged
+       automatically to a structured analytics sheet for every piece
+       of content published.</p>
+  </div>
+  <div class="card">
+    <div class="icon">⏱️</div>
+    <h3>Adaptive Scheduling</h3>
+    <p>Analyses historical performance data to identify the posting windows
+       that drive the most engagement on each platform. The publishing
+       schedule updates dynamically — no fixed cron, no manual
+       time-slot guessing.</p>
+  </div>
+  <div class="card">
+    <div class="icon">🔁</div>
+    <h3>Continuous Learning Loop</h3>
+    <p>Each publish-and-measure cycle feeds data back into the content and
+       scheduling decisions for the next cycle. Over time the agent learns
+       which formats, tones, and times work best per platform and
+       refines its approach automatically.</p>
+  </div>
+  <div class="card">
+    <div class="icon">🔐</div>
+    <h3>Secure OAuth 2.0 Access</h3>
+    <p>All platform connections use official OAuth 2.0 authorization flows.
+       No passwords are stored. Access tokens are scoped to publishing and
+       analytics only, and are managed exclusively within the private
+       n8n Cloud instance.</p>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- BRANDS -->
+<section class="brands" style="padding-top: 50px;">
+  <h2>Managed brands</h2>
+  <div class="brand-list">
+    <div class="brand-pill"><strong>PixKove</strong> — Wallpaper &amp; Aesthetic Content</div>
+    <div class="brand-pill"><strong>ShopiPick</strong> — Product &amp; E-commerce Content</div>
+  </div>
+  <p style="color:#444; font-size:0.82rem; margin-top:18px; max-width:520px; margin-left:auto; margin-right:auto; line-height:1.6;">
+    All brands listed are personally owned and operated by the same individual developer.
+    Additional personal brands and niches may be added by the developer over time.
+    Each account is accessed exclusively using its own authorized OAuth token.
+    No account data is combined, shared, or used across brands.
+  </p>
+</section>
+
+<hr class="divider">
+
+<!-- PLATFORMS -->
 <section class="platforms" id="platforms">
   <h2>Designed to work with</h2>
   <div class="platform-list">
     <span>𝕏 X (Twitter)</span>
     <span>📸 Instagram</span>
-    <span>💼 LinkedIn</span>
     <span>📌 Pinterest</span>
+    <span>🎵 TikTok</span>
     <span>▶️ YouTube</span>
+    <span>💼 LinkedIn</span>
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
-  <p>PixKove — Personal social media automation tool.</p>
+  <p>Personal social media automation — operated by a single developer.</p>
   <p style="margin-top:10px">
     <a href="privacy-policy.html">Privacy Policy</a> &nbsp;·&nbsp;
     <a href="terms.html">Terms of Service</a> &nbsp;·&nbsp;
     <a href="mailto:nyxwallhq@gmail.com">nyxwallhq@gmail.com</a>
   </p>
-  <p style="margin-top:10px">© 2026 PixKove. All rights reserved.</p>
+  <p style="margin-top:10px; color:#333;">
+    Brands covered: PixKove · ShopiPick &nbsp;|&nbsp; © 2026. All rights reserved.
+  </p>
 </footer>
 
 </body>
